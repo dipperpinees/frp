@@ -39,5 +39,13 @@ export default class FRP {
 
         const childProcess = spawn(this.binTarget, ['-c', this.iniTarget], { stdio: log ? 'pipe' : 'ignore' });
         if (unref) childProcess.unref();
+
+        childProcess.stdout?.on('data', (data) => {
+            console.log(`${data}`);
+        });
+        
+        childProcess.stderr?.on('data', (data) => {
+            console.error(`${data}`);
+        });
     }
 }

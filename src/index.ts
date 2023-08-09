@@ -1,7 +1,5 @@
 import FRPC from './utils/frpc';
 import FRPS from './utils/frps';
 
-export default {
-    frpc: new FRPC(),
-    frps: new FRPS(),
-};
+export const frpc = new FRPC();
+export const frps = new FRPS();
