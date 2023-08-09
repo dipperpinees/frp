@@ -1,0 +1,29 @@
+{
+  "name": "@bss-sbc/frp",
+  "version": "1.0.2",
+  "main": "dist/index.js",
+  "license": "MIT",
+  "scripts": {
+    "postinstall": "node ./scripts/postinstall.js",
+    "build": "rimraf ./dist && tsc"
+  },
+  "dependencies": {
+    "extract-zip": "^2.0.1",
+    "isomorphic-fetch": "^3.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.4.9",
+    "rimraf": "^5.0.1",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.1.6"
+  },
+  "files": [
+    "dist",
+    "scripts",
+    "README.md"
+  ],
+  "keywords": [
+    "tunnel",
+    "frp"
+  ]
+}
