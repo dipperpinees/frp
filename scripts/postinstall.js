@@ -61,7 +61,7 @@ async function install() {
     if (zipFileName.endsWith(".zip")) {
         await extract(zipPath, { dir: binPath })
     } else {
-        exec(`tar -xzf ${zipPath}`)
+        exec(`tar -xzf ${zipPath} -C ${binPath}`)
     }
 
     const binFolderName = zipFileName.replace(".zip", "").replace(".tar.gz", "")

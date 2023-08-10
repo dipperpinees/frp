@@ -1,7 +1,8 @@
 import { spawn } from 'child_process';
 import { writeFileSync } from 'fs';
+import path from 'path';
 
-export interface IConfig {
+interface IConfig {
     [type: string]: {
         [type: string]: string;
     };
@@ -17,8 +18,8 @@ export default class FRP {
     iniTarget: string;
 
     constructor(initTarget: string, binTarget: string) {
-        this.iniTarget = initTarget;
-        this.binTarget = binTarget;
+        this.iniTarget = path.join(__dirname, `../../bin/frp/${initTarget}`);
+        this.binTarget = path.join(__dirname, `../../bin/frp/${binTarget}`);
     }
 
     updateConfig(config: IConfig) {
