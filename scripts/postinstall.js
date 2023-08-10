@@ -61,12 +61,11 @@ async function install() {
     if (zipFileName.endsWith(".zip")) {
         await extract(zipPath, { dir: binPath })
     } else {
-        exec(`tar -xzf ${zipPath} -C ${binPath}`)
+        await exec(`tar -xzf ${zipPath} -C ${binPath}`)
     }
 
     const binFolderName = zipFileName.replace(".zip", "").replace(".tar.gz", "")
-
-    renameSync(path.join(__dirname, "..", "bin", binFolderName), path.join(__dirname, "..", "bin", "frp"))
+    renameSync(path.join(__dirname, `../bin/${binFolderName}`, ), path.join(__dirname, `../bin/frp`))
 }
 
 install().catch(err => {
