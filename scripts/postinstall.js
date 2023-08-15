@@ -7,7 +7,7 @@ const exec = util.promisify(require('child_process').exec);
 
 require("isomorphic-fetch");
 
-const FRP_PACKAGE_VERSION = "0.51.2";
+const FRP_PACKAGE_VERSION = "0.30.0";
 
 const REPO = `https://github.com/fatedier/frp/releases/download/v${FRP_PACKAGE_VERSION}/`
 
